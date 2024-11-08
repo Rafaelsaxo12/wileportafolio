@@ -1,0 +1,280 @@
+/*Root*/
+html {
+    
+    font-size: 16px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: pink;
+    font-family: sans-serif;
+    margin: 0;
+    font-size: 1rem;
+  }
+/*Header*/
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 0 25px #00000036;
+  z-index: 1000;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+  width: 50%;
+  height: auto;
+  display: flex;
+  align-items: center;
+}
+
+
+.btn-close {
+  padding: 5px;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.menu__list {
+    display: flex;
+    list-style: none;
+    padding: 20px;
+    margin: 0;
+    align-items: center;
+    gap: 20px;
+    width: max-content;
+  }
+
+.menu__link {
+  color: fuchsia;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color .3s;
+}
+
+.menu__link:hover {
+    color: fuchsia;
+  }
+  
+  .menu__link.active {
+    color: fuchsia;
+  }
+
+/* Dispositivos md Tablet */
+/* 0 - 768px */
+@media (max-width: 900px) {
+    .menu {
+      background-color: pink;
+      text-align: center;
+      flex-direction: column;
+      justify-content: space-evenly;
+      position: fixed;
+      top: 0;
+      left: -100%;
+      bottom: 0;
+      width: 100%;
+      transition: left .5s;
+    }
+    .header button {
+        background-color:pink;
+        border: solid palevioletred;
+        border-radius: 10px;
+    }
+    .show-menu {
+        left: 0;
+      }
+    
+      .menu__list {
+        flex-direction: column;
+        gap: 40px;
+      }
+    
+    .menu__link {
+        color: #fff;
+        font-size: 20px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: color .3s;
+    }
+    
+    .menu__link:hover {
+        color: #fff;
+    }
+    .menu__link.active {
+        color: #f0f0f0;
+    }
+}  
+
+.btn-close {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 50%);
+  color: #fff;
+  top: 20px;
+  right: 20px;
+  font-size: 28px;
+  width: 48px;
+  height: 48px;
+  padding: .5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: background-color .5s;
+}
+
+.btn-close:hover {
+  background-color: #ca166a;
+}
+    
+.btn-open {
+  background-color: rgba(223, 205, 205, 0.103);
+  border: solid ;
+  border-radius: 10px;
+  padding: .75em 1.2em;
+  cursor: pointer;
+}
+
+.btns {
+  display: flex;
+  gap: 15px;
+}
+
+.wilitaImg {
+    box-shadow: 7px 5px 35px #00000079;
+    width: 100%;
+    height: auto;
+}
+
+.logo img{
+    padding-left: 10px; 
+    width: 50%;
+    height: auto;
+}
+
+@media (min-width: 900px) {
+  :root {
+    --header-height: 90px;
+  }
+
+  .section__title {
+    font-size: 1.75rem;
+  }
+
+  .btn-close {
+    display: none;
+  }
+
+
+  .btn-open {
+    visibility: hidden;
+  }
+}
+
+
+/* contacto */
+
+.section  {
+  padding-top: 30px;
+  
+
+}
+
+.contact__content {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.contact__text {
+  margin-bottom: 40px;
+}
+
+.contact__box {
+  border: 1px solid var(--btn-color);
+  border-radius: 5px;
+  padding: .5em 1em;
+  width: max-content;
+  margin: 0 auto;
+}
+
+.contact__link {
+  text-decoration: none;
+  color: var(--btn-color);
+  display: flex;
+  align-items: center;
+  gap: 10px
+}
+
+.contact__link p {
+  border-left: 2px solid var(--btn-color);
+  padding-left: 10px;
+}
+
+
+.contact .fila{
+  display: flex;
+
+}
+.contact .col{
+  width: 100%;
+  padding: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.contact .col input, .contact .col textarea{
+  display: block;
+  width:100%;
+  padding: 18px;
+  border: none;   
+  margin-bottom: 20px;
+  background-color: #00000022;
+  color: #e0ffff;
+  font-size: 18px;
+}
+.contact button{
+cursor: pointer;
+background-color: transparent;
+border: 2px solid var(--color-primary);
+width:fit-content;
+display: block;
+padding: 10px 22px;
+font-size: 16px;
+color: var(--color-text);
+position: relative;
+z-index: 10;
+}
+.contact button .overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--color-primary);
+  z-index: -1;
+  transition: 1s;
+
+}
+.contact button:hover .overlay{
+  width: 100%;
+
+}
